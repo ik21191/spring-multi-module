@@ -1,0 +1,47 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+	<bean id="cource1" class="com.mypack.Cource">
+		<constructor-arg value="PHP" type="java.lang.String" />
+		<constructor-arg value="101" type="int" />
+	</bean>
+	<bean id="cource2" class="com.mypack.Cource">
+		<constructor-arg value="JAVA" type="java.lang.String" />
+		<constructor-arg value="102" type="int" />
+	</bean>
+	<bean id="cource3" class="com.mypack.Cource">
+		<constructor-arg value="ACCOUNT" type="java.lang.String" />
+		<constructor-arg value="103" type="int" />
+	</bean>
+	
+	<bean id="project1" class="com.mypack.Project">
+		<constructor-arg value="201" type="int"/>
+		<constructor-arg value="HRMS" type="java.lang.String"/>
+	</bean>
+	<bean id="project2" class="com.mypack.Project">
+		<constructor-arg value="202" type="int"/>
+		<constructor-arg value="ECOM" type="java.lang.String"/>
+	</bean>
+	
+	<bean id="studentBean" class="com.mypack.Student">
+		
+		<!-- <constructor-arg>
+			<list>
+				<ref bean="cource1" />
+				<ref bean="cource2" />
+				<ref bean="cource3" />
+			</list>
+		</constructor-arg>
+		 -->
+		<constructor-arg>
+			<map>
+				<entry key-ref="cource1"  value-ref="project1"/>
+				<entry key-ref="cource2"  value-ref="project2"/>
+				<entry key-ref="cource3"  value-ref="project1"/>
+			</map>
+		</constructor-arg>
+		
+	</bean>
+</beans>
