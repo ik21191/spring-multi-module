@@ -21,3 +21,6 @@ spring-hibernate-jpa/.gitignore
 spring-hibernate-jpa/.project
 spring-hibernate-jpa/.settings/**
 
+.idea/**
+.project
+.settings/**

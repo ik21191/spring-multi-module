@@ -55,6 +55,12 @@ public class EmployeeController {
     log.info("getAllEmployees method is called.");
     return employeeRepository.findAll();
   }
+  //The user having ADMIN role will be able to access this end point
+  @GetMapping(value = "/admin/hello")
+  public String helloAdmin() {
+    System.out.println("############## helloAdmin() is called. #####################");
+    return "Hello Admin";
+  }
 
   @PutMapping("/api/employees")
   public Employee createEmployee(@RequestBody Employee employee) {
@@ -62,6 +68,10 @@ public class EmployeeController {
     return employeeRepository.save(employee);
   }
 
+  /***
+   * Sample request
+   http://localhost:8888/api/employees/101/Imran?queryParameter=101
+   */
   @GetMapping("/api/employees/{id}/{name}")
   public ResponseEntity<com.mypack.entities.Employee> getEmployeeById(
       @PathVariable Map<String, String> pathVariableMap,
