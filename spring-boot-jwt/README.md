@@ -10,8 +10,8 @@ Expose APIs for user registration , authenticating registered users and to retri
 * Java 17
 * Spring Boot 3.2(with virtual threads)
 * Maven
-* Use docker-compose
-* TestContainers for Integration Tests
+* Use docker-compose - Not in use
+* TestContainers for Integration Tests - Not in use
 * JDBC Client
 * Swagger API documentation
 * TODO: Monitoring and Observability using Spring Boot Actuator and Micrometer
@@ -54,7 +54,7 @@ the application is running.
 ### Design Decisions
 
 **Backend Service**
-I have used Spring Boot 3.2(Spring MVC), which was released recently and added support for Virtual Threads on JDK 21.
+I have used Spring Boot 3.2(Spring MVC), which was released recently and added support for Virtual Threads on JDK 17.
 (To use Virtual Threads, I just set the property `spring.threads.virtual.enabled` to `true`.)
 
 Our Tomcat will use virtual threads for HTTP requests, means our application runs on virtual threads to achieve high throughput.
